@@ -64,13 +64,9 @@ def parse_args():
     return args
 
 
-def init_basic_elems(args, load=False):
+def init_basic_elems(args):
     model_zoo = {'deeplabv3plus': DeepLabV3Plus, 'pspnet': PSPNet, 'deeplabv2': DeepLabV2}
     model = model_zoo[args.model](args.backbone, 21 if args.dataset == 'pascal' else 19)
-    if load:
-        checkpoint = torch.load('%s/deeplabv3plus_resnet101_73.73.pth' % args.save_path)
-        model.load_state_dict(checkpoint)
-        print('load')
 
     head_lr_multiple = 10.0
     if args.model == 'deeplabv2':
