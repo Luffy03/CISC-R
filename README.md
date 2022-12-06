@@ -1,2 +1,2 @@
 # CISC-R
-Code for semi-supervised semantic segmentation
+Code for semi-supervised semantic segmentation, comming soon
