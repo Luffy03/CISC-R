@@ -13,6 +13,7 @@ import os
 import math
 from PIL import Image
 import torch
+import torch.backends.cudnn as cudnn
 from torch.nn import CrossEntropyLoss, DataParallel
 import torch.nn.functional as F
 from torch.optim import SGD
@@ -26,7 +27,7 @@ MODE = None
 
 
 def parse_args():
-    name = 'pascal/1_4'
+    name = 'pascal/1_16'
     # name = 'cityscapes/1_30'
     data = str(name.split('/')[0])
     root = 'Pascal' if data == 'pascal' else 'Cityscapes'
@@ -113,6 +114,8 @@ def main(args):
     trainloader = DataLoader(trainset, batch_size=args.batch_size, shuffle=True,
                              pin_memory=True, num_workers=16, drop_last=True)
 
+    cudnn.enabled = True
+    cudnn.benchmark = True
     model, optimizer = init_basic_elems(args)
     print('\nParams: %.1fM' % count_params(model))
     best_model = train(model, trainloader, valloader, optimizer, args)
@@ -130,7 +133,6 @@ def main(args):
 
     # <===================================== Select Reliable IDs =====================================>
     print('\n\n\n================> Total stage 3/6: Select reliable images for the 1st stage re-training')
-    # best_model, _ = init_basic_elems(args, load=True)
     select_reliable(data_root=args.data_root,
                     labeled_id_path=args.labeled_id_path, unlabeled_id_path=args.unlabeled_id_path,
                     pseudo_mask_path=args.pseudo_mask_path, dataset=args.dataset, model=best_model,
@@ -157,7 +159,6 @@ def main(args):
                              pin_memory=True, num_workers=16, drop_last=True)
 
     model_teacher = deepcopy(best_model)
-    # model_teacher, _ = init_basic_elems(args, load=True)
     model_teacher.eval()
     model, optimizer = init_basic_elems(args)
     best_model = train(model, trainloader, valloader, optimizer, args, model_teacher, labelloader)
