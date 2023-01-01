@@ -13,3 +13,40 @@ labels. Our CISC-R is inspired by the fact that images belonging to the same cla
 given an unlabeled image and its initial pseudo labels, we first query a guiding labeled image that shares the same semantic
 information with the unlabeled image. Then, we estimate the pixel-level similarity between the unlabeled image and the queried labeled
 image to form a CISC map, which guides us to achieve a reliable pixel-level rectification for the pseudo labels.
+
+## Getting Started
+### Prepare Dataset
+- Pascal: [JPEGImages](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar) | [SegmentationClass](https://drive.google.com/file/d/1ikrDlsai5QSf2GiSUR3f8PZUzyTubcuF/view?usp=sharing)
+- Cityscapes: [leftImg8bit](https://www.cityscapes-dataset.com/file-handling/?packageID=3) | [gtFine](https://drive.google.com/file/d/1E_27g9tuHm6baBqcA7jct_jqcGA89QPm/view?usp=sharing)
+- COCO: [train2017](http://images.cocodataset.org/zips/train2017.zip) | [val2017](http://images.cocodataset.org/zips/val2017.zip) | [masks](https://drive.google.com/file/d/166xLerzEEIbU7Mt1UGut-3-VN41FMUb1/view?usp=sharing)
+
+Please modify the dataset path in configuration files.
+
+*The groundtruth mask ids have already been pre-processed. You may use them directly.*
+
+```
+├── [Your Pascal Path]
+    ├── JPEGImages
+    └── SegmentationClass
+    
+├── [Your Cityscapes Path]
+    ├── leftImg8bit
+    └── gtFine
+    
+├── [Your COCO Path]
+    ├── train2017
+    ├── val2017
+    └── masks
+```
+
+### Pretrained Backbone:
+
+[ResNet-50](https://download.pytorch.org/models/resnet50-0676ba61.pth) | [ResNet-101](https://download.pytorch.org/models/resnet101-63fe2227.pth) | [Xception-65](https://drive.google.com/open?id=1_j_mE07tiV24xXOJw4XDze0-a0NAhNVi)
+
+```
+├── ./pretrained
+    ├── resnet50.pth
+    ├── resnet101.pth
+    └── xception.pth
+```
+
