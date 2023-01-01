@@ -46,8 +46,6 @@ Please modify the dataset path in configuration files.
 ### Train and Eval
 ```bash 
 python train.py
-```
-```bash 
 python eval.py
 ```
 ## Acknowledgement
