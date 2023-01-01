@@ -50,3 +50,16 @@ Please modify the dataset path in configuration files.
     └── xception.pth
 ```
 
+### Train
+```bash 
+python train.py
+```
+
+### Train
+```bash 
+python eval.py
+```
+
+## Acknowledgement
+
+We thank [ST++](https://github.com/LiheYoung/ST-PlusPlus) for part of their codes, processed datasets, data partitions, and pretrained models.
