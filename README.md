@@ -19,11 +19,8 @@ image to form a CISC map, which guides us to achieve a reliable pixel-level rect
 - Pascal: [JPEGImages](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar) | [SegmentationClass](https://drive.google.com/file/d/1ikrDlsai5QSf2GiSUR3f8PZUzyTubcuF/view?usp=sharing)
 - Cityscapes: [leftImg8bit](https://www.cityscapes-dataset.com/file-handling/?packageID=3) | [gtFine](https://drive.google.com/file/d/1E_27g9tuHm6baBqcA7jct_jqcGA89QPm/view?usp=sharing)
 - COCO: [train2017](http://images.cocodataset.org/zips/train2017.zip) | [val2017](http://images.cocodataset.org/zips/val2017.zip) | [masks](https://drive.google.com/file/d/166xLerzEEIbU7Mt1UGut-3-VN41FMUb1/view?usp=sharing)
-
 Please modify the dataset path in configuration files.
-
 *The groundtruth mask ids have already been pre-processed. You may use them directly.*
-
 ```
 ├── [Your Pascal Path]
     ├── JPEGImages
@@ -38,28 +35,20 @@ Please modify the dataset path in configuration files.
     ├── val2017
     └── masks
 ```
-
 ### Pretrained Backbone:
-
 [ResNet-50](https://download.pytorch.org/models/resnet50-0676ba61.pth) | [ResNet-101](https://download.pytorch.org/models/resnet101-63fe2227.pth) | [Xception-65](https://drive.google.com/open?id=1_j_mE07tiV24xXOJw4XDze0-a0NAhNVi)
-
 ```
 ├── ./pretrained
     ├── resnet50.pth
     ├── resnet101.pth
     └── xception.pth
 ```
-
-### Train
+### Train and Eval
 ```bash 
 python train.py
 ```
-
-### Train
 ```bash 
 python eval.py
 ```
-
 ## Acknowledgement
-
 We thank [ST++](https://github.com/LiheYoung/ST-PlusPlus) for part of their codes, processed datasets, data partitions, and pretrained models.
