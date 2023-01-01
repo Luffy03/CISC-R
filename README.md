@@ -13,3 +13,4 @@ labels. Our CISC-R is inspired by the fact that images belonging to the same cla
 given an unlabeled image and its initial pseudo labels, we first query a guiding labeled image that shares the same semantic
 information with the unlabeled image. Then, we estimate the pixel-level similarity between the unlabeled image and the queried labeled
 image to form a CISC map, which guides us to achieve a reliable pixel-level rectification for the pseudo labels.
+<p align="center"> <img src="https://github.com/Luffy03/CISC-R/blob/main/Fig.png" width="80%"> </p><br>
