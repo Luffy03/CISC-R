@@ -48,3 +48,16 @@ python eval.py
 ```
 ## Acknowledgement
 We thank [ST++](https://github.com/LiheYoung/ST-PlusPlus) for part of their codes, processed datasets, data partitions, and pretrained models.
+## Citation ✏️ 📄
+If you find this repo useful for your research, please consider citing the paper as follows:
+```
+@ARTICLE{CISC_R2022,
+  author={Wu, Linshan and Fang, Leyuan and He, Xingxin and He, Min and Ma, Jiayi and Zhong, Zhun},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Querying Labeled for Unlabeled: Cross-Image Semantic Consistency Guided Semi-Supervised Semantic Segmentation}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-18},
+  doi={10.1109/TPAMI.2022.3233584}}
+```
