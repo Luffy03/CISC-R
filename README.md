@@ -46,8 +46,10 @@ image to form a CISC map, which guides us to achieve a reliable pixel-level rect
 python train.py
 python eval.py
 ```
+
 ## Acknowledgement
 We thank [ST++](https://github.com/LiheYoung/ST-PlusPlus) for part of their codes, processed datasets, data partitions, and pretrained models.
+
 ## Citation ✏️ 📄
 If you find this repo useful for your research, please consider citing the paper as follows:
 ```
