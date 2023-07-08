@@ -57,9 +57,9 @@ If you find this repo useful for your research, please consider citing the paper
   author={Wu, Linshan and Fang, Leyuan and He, Xingxin and He, Min and Ma, Jiayi and Zhong, Zhun},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
   title={Querying Labeled for Unlabeled: Cross-Image Semantic Consistency Guided Semi-Supervised Semantic Segmentation}, 
-  year={2022},
-  volume={},
-  number={},
-  pages={1-18},
+  year={2023},
+  volume={45},
+  number={7},
+  pages={8827-8844},
   doi={10.1109/TPAMI.2022.3233584}}
 ```
